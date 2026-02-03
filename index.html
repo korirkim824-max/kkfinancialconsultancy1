@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K&K Financial Consultancy Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #000 0%, #1a1a2e 100%);
+        color: #fff;
+        line-height: 1.6;
+      }
+
+
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+      }
+
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: all 0.3s;
+        font-weight: 500;
+        position: relative;
+      }
+
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffd700;
+        transition: width 0.3s;
+      }
+
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+
+      /* Services Dropdown */
+      .services-dropdown {
+        position: relative;
+      }
+
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -20px;
+        background: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
+        min-width: 350px;
+        box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15);
+        z-index: 1000;
+        margin-top: 15px;
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid rgba(255, 215, 0, 0.1);
+      }
+
+
+      .services-dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+
+      .dropdown-content a {
+        color: #fff;
+        padding: 15px 20px;
+        text-decoration: none;
+        display: block;
+        font-size: 15px;
+        transition: all 0.3s;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+
+      .dropdown-content a:hover {
+        background: rgba(255, 215, 0, 0.1);
+        color: #ffd700;
+        border-left-color: #ffd700;
+        padding-left: 25px;
+      }
+
+
+      .dropdown-content a strong {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+
+      .dropdown-content a span {
+        color: #aaa;
+        font-size: 13px;
+        font-weight: 400;
+      }
+
+
+      /* Hero Section */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 100px 50px;
+        gap: 60px;
+        align-items: center;
+        min-height: 90vh;
+      }
+
+
+      .hero-content h3 {
+        font-size: 16px;
+        color: #ffd700;
+        margin-bottom: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+
+      .hero-content h1 {
+        font-size: 56px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+
+
+      .hero-content h2 {
+        font-size: 56px;
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 30px;
+      }
+
+
+      .hero-content p {
+        color: #aaa;
+        margin-bottom: 30px;
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+
+      .cta-button {
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        color: #000;
+        padding: 16px 40px;
+        border: none;
+        border-radius: 30px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+      }
+
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+      }
+
+
+      .hero-image {
+        position: relative;
+      }
+
+
+      .hero-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
+      }
+
+
+      /* About Section */
+      .section-title {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: #ffd700;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+      }
+
+
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 100px 50px;
+        gap: 60px;
+        align-items: center;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      }
+
+
+      .about-content h2 {
+        font-size: 42px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+
+      .about-content p {
+        color: #bbb;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+
+      .about-cta {
+        margin-top: 40px;
+      }
+
+
+      .about-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(255, 215, 0, 0.15);
+      }
+
+
+      /* Services Section */
+      .services {
+        padding: 100px 50px;
+      }
+
+
+      .services-intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 60px;
+        align-items: start;
+      }
+
+
+      .services-intro img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(255, 215, 0, 0.15);
+      }
+
+
+      .services-intro-text h3 {
+        font-size: 28px;
+        color: #fff;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+
+      .services-intro-text p {
+        color: #bbb;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+
+      .services-intro-text ul {
+        color: #bbb;
+        margin-top: 20px;
+        padding-left: 20px;
+      }
+
+
+      .services-intro-text li {
+        margin-bottom: 12px;
+        line-height: 1.8;
+      }
+
+
+      /* How I Help Section */
+      .how-help {
+        padding: 100px 50px;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      }
+
+
+      .how-help h2 {
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 80px;
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+
+      .help-grid {
+        display: grid;
+        gap: 80px;
+      }
+
+
+      .help-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+
+      .help-item.reverse {
+        direction: rtl;
+      }
+
+
+      .help-item.reverse > * {
+        direction: ltr;
+      }
+
+
+      .help-content h3 {
+        color: #ffd700;
+        font-size: 32px;
+        margin-bottom: 25px;
+        line-height: 1.3;
+      }
+
+
+      .help-content p {
+        color: #bbb;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+
+      .help-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(255, 215, 0, 0.15);
+      }
+
+
+      /* Testimonials Section */
+      .testimonials {
+        padding: 100px 50px;
+        background: linear-gradient(135deg, #000 0%, #1a1a2e 100%);
+        text-align: center;
+      }
+
+
+      .testimonials h2 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+
+      .testimonials p.intro {
+        color: #bbb;
+        max-width: 800px;
+        margin: 0 auto 70px;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+
+      .testimonial-slider {
+        max-width: 950px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+
+      .testimonial {
+        display: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+        border-radius: 20px;
+        padding: 45px 40px;
+        text-align: left;
+        transition: all 0.3s ease;
+      }
+
+
+      .testimonial.active {
+        display: block;
+        animation: fadeIn 0.6s ease;
+      }
+
+
+      .testimonial-text {
+        color: #ddd;
+        font-size: 17px;
+        line-height: 1.9;
+        margin-bottom: 28px;
+      }
+
+
+      .testimonial-author {
+        font-weight: 600;
+        color: #ffd700;
+        font-size: 15px;
+      }
+
+
+      .testimonial-role {
+        font-size: 13px;
+        color: #aaa;
+        margin-top: 6px;
+      }
+
+
+      .dots {
+        margin-top: 28px;
+      }
+
+
+      .dot {
+        height: 10px;
+        width: 10px;
+        background: rgba(255, 215, 0, 0.3);
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 6px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+
+      .dot:hover {
+        transform: scale(1.2);
+      }
+
+
+      .dot.active {
+        background: #ffd700;
+      }
+
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+
+      /* Ready to Grow Section */
+      .ready-grow {
+        padding: 100px 50px;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.05) 0%,
+          rgba(255, 215, 0, 0.02) 100%
+        );
+      }
+
+
+      .ready-grow h2 {
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 48px;
+        margin-bottom: 30px;
+      }
+
+
+      .ready-grow h3 {
+        font-size: 28px;
+        margin-bottom: 40px;
+        color: #fff;
+      }
+
+
+      .ready-grow p {
+        color: #bbb;
+        margin-bottom: 20px;
+        font-size: 16px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+      }
+
+
+      .ready-grow .cta-button {
+        margin-top: 50px;
+      }
+
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px;
+        background-color: #000;
+        color: #666;
+        font-size: 14px;
+        border-top: 1px solid rgba(255, 215, 0, 0.1);
+      }
+
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero,
+        .about,
+        .help-item,
+        .services-intro {
+          grid-template-columns: 1fr;
+        }
+
+
+        .hero-content h1,
+        .hero-content h2 {
+          font-size: 36px;
+        }
+
+
+        nav {
+          padding: 20px;
+        }
+
+
+        .nav-links {
+          gap: 15px;
+        }
+
+
+        .hero {
+          padding: 60px 20px;
+        }
+
+
+        .about,
+        .services,
+        .how-help,
+        .testimonials,
+        .ready-grow {
+          padding: 60px 20px;
+        }
+
+
+        .testimonials h2 {
+          font-size: 36px;
+        }
+
+
+        .testimonial {
+          padding: 35px 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">K&K Financial Consultancy</div>
+      <div class="nav-links">
+        <div class="services-dropdown">
+          <a href="#services">SERVICES ▼</a>
+          <div class="dropdown-content">
+            <a href="#financial-clarity">
+              <strong>Financial Clarity</strong>
+              <span>Drive smarter decisions with clear insights</span>
+            </a>
+            <a href="#investor-ready">
+              <strong>Get Investor-Ready</strong>
+              <span>Prepare for fundraising and growth</span>
+            </a>
+            <a href="#finance-team">
+              <strong>Strengthen Finance Team</strong>
+              <span>Build and develop your financial talent</span>
+            </a>
+          </div>
+        </div>
+        <a href="#insights">INSIGHTS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h3>Need financial clarity?</h3>
+        <h1>Don't hire a full-time CFO.</h1>
+        <h2>Subscribe to one.</h2>
+        <p>
+          Get CFO-level insights without the full-time cost. Best for startups,
+          SMEs, and founders.
+        </p>
+        <a
+          href="https://calendly.com/korirkim824/30min"
+          target="_blank"
+          class="cta-button"
+        >
+          Book a Call
+        </a>
+      </div>
+      <div class="hero-image">
+        <img src="/jonah_korir.jpg" alt="Jonah Korir" />
+      </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <div class="section-title">ABOUT ME</div>
+        <h2>Hi, I'm Korir.</h2>
+        <p>
+          With 5+ years of experience in financial analysis and accounting, I've
+          helped businesses gain clarity, streamline their operations, and make
+          confident, data-backed decisions.
+        </p>
+        <p>
+          As a Fractional Finance Partner, I provide strategic financial
+          leadership without the cost of a full-time hire. I help founders and
+          business owners understand their finances, optimize performance, and
+          plan for sustainable growth.
+        </p>
+        <p>
+          If you're dealing with messy books, unclear financial reports, cash
+          flow pressure, or making decisions without solid numbers, I'm here to
+          help.
+        </p>
+        <p>
+          Let's grab a virtual coffee and talk about your business and where you
+          need financial clarity.
+        </p>
+        <div class="about-cta">
+          <a
+            href="https://calendly.com/korirkim824/30min"
+            target="_blank"
+            class="cta-button"
+          >
+            Book a Call
+          </a>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="/jonah_korir_2.jpg" alt="Jonah presenting" />
+      </div>
+    </section>
+
+
+    <!-- Services Intro -->
+    <section class="services" id="services">
+      <div class="services-intro">
+        <img src="/jonah_korir_3.jpg" alt="Professional photo" />
+        <div class="services-intro-text">
+          <h3>I work with startups, scaleups, and established businesses.</h3>
+          <p>
+            As a fractional finance partner, I work directly with founders,
+            CEOs, and operations who are scaling their businesses but need
+            clear, reliable financial leadership without the cost of a full-time
+            hire.
+          </p>
+          <p>I work with businesses that:</p>
+          <ul>
+            <li>
+              Want their financial operations and reporting ready for fast
+              growth.
+            </li>
+            <li>
+              Are preparing for a major financial event - such as fundraising,
+              audits, acquisitions, or IPOs.
+            </li>
+            <li>
+              Are improving internal controls, forecasting, or overall financial
+              discipline.
+            </li>
+          </ul>
+          <p>
+            I help businesses as they scale, improve cash flow, maximize ROI,
+            strengthen financial reporting, and prepare confidently for
+            fundraising, mergers, or long-term growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- How I Help Section -->
+    <section class="how-help">
+      <h2>How I help your company grow</h2>
+      <div class="help-grid">
+        <div class="help-item" id="financial-clarity">
+          <div class="help-content">
+            <h3>Financial clarity that drives smarter decisions</h3>
+            <p>
+              As a fractional financial analyst and accountant, I separate your
+              business into the key numbers that matter. I analyze your
+              financials, simplify complex data, and provide real insights and
+              guidance that help you make smarter decisions without wasting
+              money or guessing.
+            </p>
+          </div>
+          <div class="help-image">
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop"
+              alt="Financial clarity"
+            />
+          </div>
+        </div>
+
+
+        <div class="help-item reverse" id="investor-ready">
+          <div class="help-content">
+            <h3>Get investor-ready, faster</h3>
+            <p>
+              Raising capital or preparing for growth? I help you organize your
+              books, improve reporting, and develop financial models that show
+              what it takes to impress your investors and attract funding
+              opportunities for you when the time is right.
+            </p>
+          </div>
+          <div class="help-image">
+            <img
+              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=400&fit=crop"
+              alt="Investor ready"
+            />
+          </div>
+        </div>
+
+
+        <div class="help-item" id="finance-team">
+          <div class="help-content">
+            <h3>Strengthen your finance team</h3>
+            <p>Strong financial performance starts with the right people.</p>
+            <p>
+              I help you recruit, train, and develop financial talent that fits
+              your business model. I guide your team on best practices,
+              establish reporting routines, and improve consistency,
+              accountability, and confidence in your numbers.
+            </p>
+          </div>
+          <div class="help-image">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
+              alt="Finance team"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2>What my clients say</h2>
+      <p class="intro">
+        Here’s what it looks like when your numbers stop being a guessing game.
+      </p>
+
+
+      <div class="testimonial-slider" aria-label="Client testimonials">
+        <div class="testimonial active">
+          <p class="testimonial-text">
+            “We went from ‘we think we’re okay’ to actually knowing what our
+            cash position was every week. Reporting became consistent, and
+            decision making got a lot faster.”
+          </p>
+          <div class="testimonial-author">David M.</div>
+          <div class="testimonial-role">Founder, SaaS Startup</div>
+        </div>
+
+
+        <div class="testimonial">
+          <p class="testimonial-text">
+            “Korir helped us clean up reporting and build forecasts that our
+            leadership team could actually trust. The clarity reduced stress
+            instantly.”
+          </p>
+          <div class="testimonial-author">Sarah K.</div>
+          <div class="testimonial-role">CEO, Fintech Company</div>
+        </div>
+
+
+        <div class="testimonial">
+          <p class="testimonial-text">
+            “Fundraising prep was the big one for us. We tightened the books,
+            fixed gaps in reporting, and built a model that told a clear story
+            to investors.”
+          </p>
+          <div class="testimonial-author">James O.</div>
+          <div class="testimonial-role">COO, Growth-Stage Business</div>
+        </div>
+
+
+        <div class="testimonial">
+          <p class="testimonial-text">
+            “If you want someone who can go deep on the numbers but still speak
+            in plain language, this is it. No fluff — just clean insight and
+            action.”
+          </p>
+          <div class="testimonial-author">Linda W.</div>
+          <div class="testimonial-role">Managing Director, SME</div>
+        </div>
+
+
+        <div class="testimonial">
+          <p class="testimonial-text">
+            “We didn’t need a full-time CFO. We needed a finance partner who
+            could set structure, improve discipline, and help us plan growth
+            responsibly. That’s exactly what we got.”
+          </p>
+          <div class="testimonial-author">Michael T.</div>
+          <div class="testimonial-role">Head of Operations</div>
+        </div>
+
+
+        <div class="testimonial">
+          <p class="testimonial-text">
+            “The biggest win was cash flow. We identified leakage, tightened
+            controls, and started tracking the right metrics. It changed how we
+            run the business.”
+          </p>
+          <div class="testimonial-author">Aisha N.</div>
+          <div class="testimonial-role">Startup Founder</div>
+        </div>
+      </div>
+
+
+      <div class="dots" role="tablist" aria-label="Testimonial navigation">
+        <span class="dot active" role="tab" aria-selected="true"></span>
+        <span class="dot" role="tab" aria-selected="false"></span>
+        <span class="dot" role="tab" aria-selected="false"></span>
+        <span class="dot" role="tab" aria-selected="false"></span>
+        <span class="dot" role="tab" aria-selected="false"></span>
+        <span class="dot" role="tab" aria-selected="false"></span>
+      </div>
+    </section>
+
+
+    <!-- Ready to Grow Section -->
+    <section class="ready-grow">
+      <h2>Is your company ready to grow fast?</h2>
+      <h3>Are you preparing for a major financial event?</h3>
+      <p>Then let's talk.</p>
+      <p>
+        I've helped businesses scale from early-stage startups to established
+        companies.
+      </p>
+      <p>
+        I've supported teams through fundraising, audits, and strategic
+        financial milestones.
+      </p>
+      <p>
+        I've helped leadership teams gain clarity, control cash flow, and make
+        confident decisions with their numbers.
+      </p>
+      <p>
+        I've worked alongside founders, CEOs, and operators as a trusted finance
+        partner.
+      </p>
+      <p>
+        I'm happy to spend time with you building a clear financial roadmap to
+        support your next days of growth.
+      </p>
+      <a
+        href="https://calendly.com/korirkim824/30min"
+        target="_blank"
+        class="cta-button"
+      >
+        Book a Call
+      </a>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 K&K Financial Consultancy. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+
+      // CTA buttons (placeholder)
+      document.querySelectorAll(".cta-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          alert("Booking feature coming soon! Contact: info@jonahkorir.com");
+        });
+      });
+
+
+      // Testimonials slider
+      const testimonialItems = document.querySelectorAll(".testimonial");
+      const testimonialDots = document.querySelectorAll(".dot");
+      let testimonialIndex = 0;
+      let testimonialTimer = null;
+
+
+      function showTestimonial(i) {
+        testimonialItems.forEach((t) => t.classList.remove("active"));
+        testimonialDots.forEach((d) => d.classList.remove("active"));
+        testimonialItems[i].classList.add("active");
+        testimonialDots[i].classList.add("active");
+
+
+        testimonialDots.forEach((d, idx) => {
+          d.setAttribute("aria-selected", idx === i ? "true" : "false");
+        });
+
+
+        testimonialIndex = i;
+      }
+
+
+      function nextTestimonial() {
+        testimonialIndex = (testimonialIndex + 1) % testimonialItems.length;
+        showTestimonial(testimonialIndex);
+      }
+
+
+      function startTestimonialsAutoplay() {
+        stopTestimonialsAutoplay();
+        testimonialTimer = setInterval(nextTestimonial, 6000);
+      }
+
+
+      function stopTestimonialsAutoplay() {
+        if (testimonialTimer) clearInterval(testimonialTimer);
+      }
+
+
+      testimonialDots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          showTestimonial(i);
+          startTestimonialsAutoplay();
+        });
+      });
+
+
+      // Start autoplay once DOM is ready (script is at end, so OK)
+      if (testimonialItems.length > 0) startTestimonialsAutoplay();
+    </script>
+  </body>
+</html>
